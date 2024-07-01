@@ -14,6 +14,7 @@
 		93140CB02C31A11A005EB3E5 /* WordScrambleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93140CAF2C31A11A005EB3E5 /* WordScrambleTests.swift */; };
 		93140CBA2C31A11A005EB3E5 /* WordScrambleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93140CB92C31A11A005EB3E5 /* WordScrambleUITests.swift */; };
 		93140CBC2C31A11A005EB3E5 /* WordScrambleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93140CBB2C31A11A005EB3E5 /* WordScrambleUITestsLaunchTests.swift */; };
+		93140D702C333A74005EB3E5 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93140D6F2C333A74005EB3E5 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		93140CB52C31A11A005EB3E5 /* WordScrambleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordScrambleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93140CB92C31A11A005EB3E5 /* WordScrambleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleUITests.swift; sourceTree = "<group>"; };
 		93140CBB2C31A11A005EB3E5 /* WordScrambleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		93140D6F2C333A74005EB3E5 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				93140C9D2C31A118005EB3E5 /* WordScrambleApp.swift */,
 				93140C9F2C31A118005EB3E5 /* ContentView.swift */,
 				93140CA12C31A11A005EB3E5 /* Assets.xcassets */,
+				93140D6F2C333A74005EB3E5 /* start.txt */,
 				93140CA32C31A11A005EB3E5 /* WordScramble.entitlements */,
 				93140CA42C31A11A005EB3E5 /* Preview Content */,
 			);
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93140CA62C31A11A005EB3E5 /* Preview Assets.xcassets in Resources */,
+				93140D702C333A74005EB3E5 /* start.txt in Resources */,
 				93140CA22C31A11A005EB3E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
