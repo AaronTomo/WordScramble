@@ -13,6 +13,8 @@ struct ContentView: View {
     @State private var rootWord = ""
     @State private var newWord = ""
     
+    @State private var score = 0
+    
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
@@ -22,8 +24,12 @@ struct ContentView: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Enter your word", text: $newWord)
-                        .textInputAutocapitalization(.never)
+                    HStack {
+                        TextField("Enter your word", text: $newWord)
+                            .textInputAutocapitalization(.never)
+                        
+                        Text("Score \(score)")
+                    }
                 }
                 
                 Section {
@@ -46,6 +52,15 @@ struct ContentView: View {
             } message: {
                 Text(errorMessage)
             }
+            .toolbar(){
+                Button("Start Game"){
+                    usedWords.removeAll()
+                    rootWord = ""
+                    score = 0
+                    newWord = ""
+                    startGame()
+                }
+            }
         }
 
     }
@@ -54,6 +69,11 @@ struct ContentView: View {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard answer.count > 0 else { return }
+        
+        guard checkShortWord(word: answer) else {
+            wordError(title: "Word invalid", message: "Answer must not be the same as word or be under 3 characters")
+            return
+        }
         
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original!")
@@ -73,6 +93,8 @@ struct ContentView: View {
         withAnimation{
             usedWords.insert(newWord, at: 0)
         }
+        
+        score = usedWords.count * answer.count + score
         newWord = ""
     }
     
@@ -86,6 +108,13 @@ struct ContentView: View {
             }
         }
         fatalError("Could not load start.txt from bundle.")
+    }
+    
+    func checkShortWord(word: String) -> Bool {
+        if word.count < 3 || rootWord == word {
+            return false
+        }
+        return true
     }
     
     func isOriginal(word: String) -> Bool {
